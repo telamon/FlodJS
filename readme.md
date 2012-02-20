@@ -42,6 +42,29 @@ http://sandbox.photonstorm.com/FlodJS/
 Example
 -------
 
+*Simple Way* (Include everything)
+
+Include http://telamon.github.com/FlodJS/1.0/flod-min.js
+
+      <script src="http://telamon.github.com/FlodJS/1.0/flod-min.js" type="text/javascript"></script>
+
+Play file from url
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://example.com/my_cool_tune.xm', true);
+      xhr.responseType = 'arraybuffer';
+      xhr.onload = function(e){
+        if(this.status == 200){
+          var xmplayer = window.neoart.F2Player(null);
+          xmplayer.load(this.response);
+          xmplayer.play();
+        }else{
+          alert('No mod found at URL');
+        }
+      }
+
+*Usual Way* (Pick your formats)
+
 You can include just the player(s) you need in your page just remember that all the Amiga players needs
 the Core.js and the Amiga.js files too and the PC player (FT2) needs the Core.js and the Soundblaster.js files.
 
