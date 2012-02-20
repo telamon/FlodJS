@@ -62,6 +62,7 @@ Play file from url
           alert('No mod found at URL');
         }
       }
+      xhr.send();
 
 *Usual Way* (Pick your formats)
 
